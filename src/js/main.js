@@ -7,18 +7,7 @@ const btnReset = document.querySelector('.btn__reset');
 const btnTip = document.querySelectorAll('.btn__tip');
 const errorBill = document.querySelector('.card__error--bill');
 const errorPeople = document.querySelector('.card__error--people');
-btnTip.forEach((item) => {
-	item.addEventListener('click', () => {
-		count(item.value);
-	});
-});
-inputCustom.addEventListener('input', () => {
-	if (inputCustom.value < 0) {
-		inputCustom.value = '';
-	} else {
-		count(inputCustom.value / 100);
-	}
-});
+
 const count = (tip) => {
 	if (inputBill.value > 0 && inputPeople.value > 0) {
 		let bill = inputBill.value;
@@ -41,7 +30,6 @@ const count = (tip) => {
       reset(0);
 	}
 };
-btnReset.addEventListener('click', () => reset(1));
 function reset (fullReset)  {
 	if (fullReset) {
 		inputBill.value = '';
@@ -57,3 +45,28 @@ const addZeroes = (num) => {
   const len = dec && dec.length > 2 ? dec.length : 2
   return Number(num).toFixed(len)
 }
+const check = (value) => {
+	if(!(value.value >= 0)) 
+	{
+		value.value='';
+	}
+}
+btnTip.forEach((item) => {
+	item.addEventListener('click', () => {
+		count(item.value);
+	});
+});
+btnReset.addEventListener('click', () => reset(1));
+inputCustom.addEventListener('input', () => {
+	if(check(inputCustom))
+	{
+		count(inputCustom.value / 100);
+	}
+	
+});
+inputBill.addEventListener('input', () => {
+	check(inputBill)
+});
+inputPeople.addEventListener('input', () => {
+	check(inputPeople)
+})
