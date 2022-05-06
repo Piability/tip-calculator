@@ -58,7 +58,8 @@ btnTip.forEach((item) => {
 });
 btnReset.addEventListener('click', () => reset(1));
 inputCustom.addEventListener('input', () => {
-	if(check(inputCustom))
+	check(inputCustom)
+	if(inputCustom.value>0)
 	{
 		count(inputCustom.value / 100);
 	}
