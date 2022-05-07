@@ -13,7 +13,7 @@ const count = (tip) => {
 		let bill = inputBill.value;
     let group = inputPeople.value
 		let resultTipPerPerson = ((tip*bill)/group).toFixed(2);
-    let resultBillPerPerson = (+resultTipPerPerson + +(bill/group)).toFixed(2);
+    let resultBillPerPerson = (resultTipPerPerson + (bill/group)).toFixed(2);
     resultTip.textContent=`$${addZeroes(resultTipPerPerson)}`;
     resultTotal.textContent=`$${addZeroes(resultBillPerPerson)}`;
 		btnReset.disabled = false;
@@ -59,7 +59,7 @@ btnTip.forEach((item) => {
 btnReset.addEventListener('click', () => reset(1));
 inputCustom.addEventListener('input', () => {
 	check(inputCustom)
-	if(inputCustom.value>0)
+	if(inputCustom.value>=0)
 	{
 		count(inputCustom.value / 100);
 	}
