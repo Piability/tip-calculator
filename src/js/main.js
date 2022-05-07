@@ -36,6 +36,7 @@ function reset (fullReset)  {
 		inputBill.value = '';
 		inputCustom.value = '';
 		inputPeople.value = '';
+		tip = 0
 	}
 	resultTip.textContent = '$0.00';
 	resultTotal.textContent = '$0.00';
