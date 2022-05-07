@@ -15,8 +15,8 @@ const count = () => {
     let group = inputPeople.value
 		let resultTipPerPerson = ((tip*bill)/group).toFixed(2);
     let resultBillPerPerson = (+resultTipPerPerson + +(bill/group)).toFixed(2);
-    resultTip.textContent=`$${addZeroes(resultTipPerPerson)}`;
-    resultTotal.textContent=`$${addZeroes(resultBillPerPerson)}`;
+    resultTip.textContent=`$${resultTipPerPerson}`;
+    resultTotal.textContent=`$${(resultBillPerPerson)}`;
 		btnReset.disabled = false;
 		errorBill.classList.add('hide');
 		errorPeople.classList.add('hide');
@@ -42,11 +42,6 @@ function reset (fullReset)  {
 	resultTotal.textContent = '$0.00';
 	btnReset.disabled = true
 };
-const addZeroes = (num) => {
-  const dec = num.toString().split('.')[1]
-  const len = dec && dec.length > 2 ? dec.length : 2
-  return Number(num).toFixed(len)
-}
 const check = (value) => {
 	if(!(value.value >= 0)) 
 	{
