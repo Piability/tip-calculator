@@ -15,11 +15,11 @@
 
 <body>
 
-  <header class="header">
+  <header class="header" role="title">
     <h1 class="header__title">SPLI<br>TTER</h1>
   </header>
-  <div class="wrapper">
-    <div class="card">
+  <main class="wrapper" role="main">
+    <section class="card" role="card">
       <div class="card__form">
         <div class="card__bill">
           <div class="card__info">
@@ -36,7 +36,7 @@
           <button class="btn btn__tip" value="0.15">15%</button>
           <button class="btn btn__tip" value="0.25">25%</button>
           <button class="btn btn__tip" value="0.5">50%</button>
-          <input type="text" class="card__input card__input--tip" placeholder="Custom" min="0">
+          <input type="text" class="card__input card__input--tip" placeholder="Custom">
         </div>
         <div class="card__people">
           <div class="card__info">
@@ -66,8 +66,8 @@
           reset
         </button>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
   </div>
 
 </body>
